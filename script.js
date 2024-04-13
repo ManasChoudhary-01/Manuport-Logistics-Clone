@@ -260,7 +260,7 @@ const ourteam = document.querySelectorAll('.content11 h3')
 function parallax() {
   let scrollValue = window.scrollY;
 
-  if (ourteam[0].hasAttribute('style') && scrollValue >= 7421 && window.innerWidth >= 980) {
+  if (ourteam[0].hasAttribute('style') && scrollValue >= 8000 && window.innerWidth >= 980) {
     ourteam[0].removeAttribute('style')
     setTimeout(() => {
       ourteam[1].removeAttribute('style')
