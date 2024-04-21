@@ -144,7 +144,7 @@ html {
     font-size: 1.6rem;
     opacity: 0;
     animation: fadeIn 0.4s ease-in-out forwards;
-    animation-delay: 4s;
+    animation-delay: 6s;
 }
 
 .topsection ul a {
