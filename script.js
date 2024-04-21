@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   navItems.forEach((item, index) => {
     setTimeout(() => {
       item.classList.add("show");
-    }, index * 100);
+    },2800 + index * 100);
   });
 });
 
