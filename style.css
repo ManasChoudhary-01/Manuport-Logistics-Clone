@@ -1065,6 +1065,7 @@ nav a:hover {
     background-color: #F6FAFF;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .content7 {
@@ -1145,7 +1146,10 @@ nav a:hover {
 
 .image-container3 {
     margin-right: 4rem;
-
+    position: absolute;
+    right: 0%;
+    top: 270%;
+    transition: all 0.2s linear;
 }
 
 .image-container3 img {
