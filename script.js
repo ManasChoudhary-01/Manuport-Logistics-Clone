@@ -59,18 +59,27 @@ window.addEventListener("scroll", function() {
     lastScrollTop5 = st <= 0 ? 0 : st;
 }, false);
 
-document.querySelector(".rotator2").addEventListener("mouseover", function() {
+document.querySelector(".rotator2").addEventListener("mouseenter", function() {
   document.querySelector(".rotator1").classList.remove("hidden");
   document.querySelector(".rotator2").classList.add("hidden");
   document.querySelector(".rotator1").style.backgroundColor = "#f0cd76";
 });
 
-document.querySelector(".rotator1").addEventListener("mouseout", function() {
+document.querySelector(".rotator1").addEventListener("mouseleave", function() {
   document.querySelector(".rotator1").style.backgroundColor = "#fff";
   document.querySelector(".rotator1").classList.add("hidden");
   document.querySelector(".rotator2").classList.remove("hidden");
 });
 
+
+// Parallax Animation
+let parallaximg = document.getElementsByClassName("image-container3")[0];
+console.log(parallaximg);
+
+document.addEventListener("scroll", function () {
+  parallaximg.style.transform = `translateY(-${window.pageYOffset * 0.35}px)`;
+
+});
 
 // ACCORDIAN 
 
