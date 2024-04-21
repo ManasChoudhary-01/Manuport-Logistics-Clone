@@ -1,3 +1,28 @@
+// PRELOADER 
+
+function loaderAnimation() {
+  var loader = document.querySelector(".preloader")
+  setTimeout(function () {
+      loader.style.top = "-100%"
+  }, 2000)
+}
+
+loaderAnimation()
+
+let counterElement = document.getElementById("counter");
+let count = 0;
+let intervalId = setInterval(() => {
+    count++;
+    if (count > 100) {
+        clearInterval(intervalId);
+        document.querySelector('.preloader').style.backgroundColor = '#FFFFFF';
+        document.querySelector('.preloader-box').style.display = 'none';
+    } else {
+        counterElement.textContent = count + "%"
+    }
+}, 15);
+
+
 // NAVBAR ONLOADING ANIMATION 
 
 document.addEventListener("DOMContentLoaded", function () {
