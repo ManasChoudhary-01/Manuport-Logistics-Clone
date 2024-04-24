@@ -34,11 +34,47 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 // HAMBURGER MENU FUNCTION 
 
 function onClickMenu() {
-  document.querySelectorAll("nav ul li").classList.toggle("active");
-} 
+  var menuIcon = document.getElementById("menu");
+  var nav = document.querySelector("nav");
+
+  menuIcon.classList.toggle("bx-menu");
+  menuIcon.classList.toggle("bx-x");
+
+  nav.classList.toggle("active");
+
+  var navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(link => {
+      link.classList.toggle("transformed");
+  });
+
+  let hamItem1 = document.querySelectorAll('.mainsection');
+
+  hamItem1.forEach(function (element) {
+    element.classList.toggle('hide1');
+  });
+
+  let hamItem2 = document.querySelectorAll('.hamlogo');
+
+  hamItem2.forEach(function (element) {
+    element.classList.toggle('hide2');
+  });
+
+  let hamItem3 = document.querySelectorAll('#bluelogo');
+
+  hamItem3.forEach(function (element) {
+    element.classList.toggle('hide3');
+  });
+
+  let hamItem4 = document.querySelectorAll('.mainsection i');
+
+  hamItem4.forEach(function (element) {
+    element.classList.toggle('hide4');
+  });
+}
 
 
 // ROTATING TEXT ANIMATION 
@@ -73,12 +109,14 @@ document.querySelector(".rotator1").addEventListener("mouseleave", function() {
 
 
 // Parallax Animation
+
 let parallaximg = document.getElementsByClassName("image-container3")[0];
 console.log(parallaximg);
 
 document.addEventListener("scroll", function () {
-  parallaximg.style.transform = `translateY(-${window.pageYOffset * 0.35}px)`;
-
+  if (window.innerWidth >= 1000) {
+     parallaximg.style.transform = `translateY(-${window.pageYOffset * 0.35}px)`;
+  }
 });
 
 // ACCORDIAN 
