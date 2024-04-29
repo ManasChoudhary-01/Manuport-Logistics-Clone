@@ -54,7 +54,7 @@ html {
     position: fixed;
     top: 0;
     z-index: 2000;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #00358D;
     display: flex;
@@ -3509,7 +3509,7 @@ footer {
     }
 
     .image-container3 img {
-        height: 230vh;
+        height: 180vh;
         border-radius: 0 0 10rem 0;
     }
 
@@ -3790,6 +3790,9 @@ footer {
     .image-container7 img {
         width: 100%;
     }
+    .image-container3 img {
+        height: 150vh;
+    }
 }
 
 @media(max-width:500px) {
@@ -3831,6 +3834,9 @@ footer {
         height: 60rem;
         opacity: 0;
         transition: transform 0.5s;
+    }
+    .image-container3 img {
+        height: 120vh;
     }
 
 
