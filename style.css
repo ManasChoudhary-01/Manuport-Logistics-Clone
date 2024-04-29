@@ -3049,11 +3049,41 @@ footer {
     #get {
         color: #00358D;
     }
+    .preloader-box {
+        height: 75vh;
+        width: 75%;
+    }
 
 }
 
 
 @media(max-width:700px) {
+
+    .preloader-box {
+        height: 80%;
+        width: 90%;
+        background-color: #FFFFFF;
+        border-radius: 10rem 0 10rem 0;
+        display: flex;
+        padding-top: 8vh;
+    
+    }
+    #counter {
+        padding-top: 8rem;
+    }
+    .preloader-img {
+        height: 45vh;
+    }
+    
+    .preloader-img img {
+        height: 45vh;
+    }
+    .mainsection {
+        width: 100%;
+    }
+    header #menu {
+        padding-right: 0rem;
+    }
 
     .rotator1 {
         right: 3rem;
@@ -3774,6 +3804,10 @@ footer {
 @media(max-width:600px) {
 
 
+    .preloader-box {
+        height: 75%;
+        width: 100%;
+    }
     .what {
         padding-top: 30rem;
         height: 130rem;
@@ -3803,9 +3837,15 @@ footer {
 
 @media(max-width:500px) {
 
+    .preloader-box {
+        height: 65%;
+        width: 100%;
+        border-radius: 0rem 0 0rem 0;
+        padding-top: 4vh;
+    
+    }
     .how {
         height: 90rem;
-        ;
     }
 
     .image-container1 {
@@ -3842,7 +3882,7 @@ footer {
         transition: transform 0.5s;
     }
     .image-container3 img {
-        height: 120vh;
+        height: 100vh;
     }
 
 
@@ -3887,6 +3927,9 @@ footer {
 
     .container4 {
         padding-bottom: 10rem;
+    }
+    .image-container3 img {
+        height: 70vh;
     }
 }
 
