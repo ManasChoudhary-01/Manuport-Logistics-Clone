@@ -122,83 +122,36 @@ document.addEventListener("scroll", function () {
 // ACCORDIAN 
 
 const acc = document.querySelectorAll(".acc");
-const fillBars = document.querySelectorAll(".fill-bar");
 const works = document.querySelectorAll(".work");
 
-let currentIndex3 = 0;
-
-function showAccordionAndWork(index) {
-  acc.forEach((item) => {
-    item.classList.remove("active2");
-  });
-  works.forEach((work) => {
-    work.style.display = "none";
-  });
-
-  acc[index].classList.add("active2");
-  works[index].style.display = "block";
-
-  setTimeout(() => {
-    currentIndex3 = (currentIndex3 + 1) % acc.length;
-    showAccordionAndWork(currentIndex3);
-  }, 10000);
+function showAccordion() {
+  for (let i = 0; i < 4; i++) {
+    (function(i) {
+      setTimeout(function() {
+        acc[i].classList.add("active2");
+        works[i].style.display = "block";
+        if (i > 0) {
+          acc[i - 1].classList.remove("active2");
+          works[i-1].style.display = "none";
+        } else {
+          acc[3].classList.remove("active2");
+          works[3].style.display = "none";
+        }
+        
+        if (i === 3) {
+          setTimeout(function() {
+            showAccordion();
+          }, 10000);
+        }
+      }, i * 10000);
+    })(i);
+  }
 }
 
-showAccordionAndWork(currentIndex3);
-
-acc.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    clearTimeout();
-    currentIndex3 = index;
-    showAccordionAndWork(currentIndex3);
-  });
-});
-
-
-
-let currentIndex2 = 0;
-
-function activateAccordion(index) {
-  acc.forEach((item) => {
-    if (item.classList.contains("active2")) {
-      item.classList.remove("active2");
-    }
-  });
-
-  acc[index].classList.add("active2");
-
-  fillBars[index].style.animation = "fill 10s linear forwards";
-
-  setTimeout(() => {
-    fillBars[index].style.animation = "";
-    toggleActiveClass();
-  }, 10000);
-}
-
-function toggleActiveClass() {
-  currentIndex2 = (currentIndex2 + 1) % acc.length;
-  activateAccordion(currentIndex2);
-}
-
-acc.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    fillBars[currentIndex2].style.animation = "";
-    currentIndex2 = index;
-    activateAccordion(currentIndex2);
-  });
-});
-
-window.addEventListener("scroll", () => {
-  const scrollValue = window.scrollY;
-
-  if (scrollValue >= 420 && window.innerWidth >= 980) {
-    if (!animationStarted) {
-      activateAccordion(currentIndex2);
-      animationStarted = true;
-    }
-  } else {
-    animationStarted = false;
-    fillBars[currentIndex2].style.animation = "";
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 400) {
+    showAccordion();
+    window.removeEventListener('scroll', arguments.callee);
   }
 });
 
